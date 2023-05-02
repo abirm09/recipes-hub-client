@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Registration = () => {
-  const { createUserWithEmailPass } = useContext(AuthContext);
+  const { createUserWithEmailPass, googleLogin, githubLogin } =
+    useContext(AuthContext);
   const handleRegistration = event => {
     event.preventDefault();
     const form = event.target;
@@ -29,6 +30,18 @@ const Registration = () => {
       photoURL: photo || null,
     });
   };
+  //login with google
+  const handleGoogleLogIn = () => {
+    googleLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   return (
     <section>
       <div className="cs-container">
@@ -99,10 +112,10 @@ const Registration = () => {
           <div>
             <h4 className="text-center font-bold py-4">Or continue with</h4>
             <ul className="flex justify-center gap-5">
-              <li className="w-10">
+              <li className="w-10 cursor-pointer" onClick={handleGoogleLogIn}>
                 <img src={googleLogo} alt="Google sign in" />
               </li>
-              <li className="w-10">
+              <li className="w-10 cursor-pointer">
                 <img src={githubLogo} alt="Google sign in" />
               </li>
             </ul>
