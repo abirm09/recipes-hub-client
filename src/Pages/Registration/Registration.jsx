@@ -41,6 +41,17 @@ const Registration = () => {
         console.log(err);
       });
   };
+  //login with github
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   return (
     <section>
@@ -115,7 +126,7 @@ const Registration = () => {
               <li className="w-10 cursor-pointer" onClick={handleGoogleLogIn}>
                 <img src={googleLogo} alt="Google sign in" />
               </li>
-              <li className="w-10 cursor-pointer">
+              <li className="w-10 cursor-pointer" onClick={handleGithubLogin}>
                 <img src={githubLogo} alt="Google sign in" />
               </li>
             </ul>
