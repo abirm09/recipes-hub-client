@@ -2,9 +2,14 @@
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { FaHeart } from "react-icons/fa";
+import Swal from "sweetalert2";
 const Recipes = ({ recipe }) => {
   const { photo, recipeName, cookingMethod, ingredients, rating } = recipe;
-  console.log(recipe);
+  const addToFav = event => {
+    event.target.parentElement.setAttribute("disabled", true);
+    Swal.fire("Yah...", "Added to favorite list", "success");
+  };
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
@@ -25,8 +30,19 @@ const Recipes = ({ recipe }) => {
             Cooking methods.
           </h4>
           <p>{cookingMethod.description}</p>
-          <h4 className="text-xl font-bold font-poppins mt-5">Ratings</h4>
-          <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
+          <div>
+            <h4 className="text-xl font-bold font-poppins mt-5">Ratings</h4>
+            <div className="flex justify-between">
+              <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+              <button className="btn relative">
+                <FaHeart />
+                <span
+                  className="absolute w-full h-full block z-30"
+                  onClick={addToFav}
+                ></span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

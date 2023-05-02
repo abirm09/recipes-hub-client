@@ -2,7 +2,6 @@ import ChefSingle from "./ChefSingle";
 
 /* eslint-disable react/prop-types */
 const Chefs = ({ data }) => {
-  console.log(data);
   return (
     <section className="mt-28" id="chefs">
       <div className="cs-container">
