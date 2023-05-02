@@ -5,6 +5,7 @@ import Blog from "../../Pages/Home/Blog/Blog";
 import Chef from "../../Pages/Home/Chef/Chef";
 import Login from "../../Pages/Login/Login";
 import Registration from "../../Pages/Registration/Registration";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ export const routes = createBrowserRouter([
           fetch(
             `https://recipes-hub-server-abirm09.vercel.app/chef/${params.id}`
           ),
-        element: <Chef />,
+        element: (
+          <PrivateRoute>
+            <Chef />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
