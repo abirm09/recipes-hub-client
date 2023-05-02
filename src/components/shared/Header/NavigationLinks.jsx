@@ -16,13 +16,15 @@ const NavigationLinks = () => {
       {user ? (
         <>
           <li
-            className="tooltip tooltip-bottom p-0 mt-5 lg:mt-0"
-            data-tip={user?.displayName}
+            className={`${
+              user?.displayName ? "tooltip tooltip-bottom" : ""
+            } p-0 mt-5 lg:mt-0`}
+            data-tip={user?.displayName ? user?.displayName : ""}
           >
             <img
               src={user?.photoURL ? user?.photoURL : emptyUSer}
               alt="User"
-              className="w-14 p-0 ml-5"
+              className="w-14 h-14 p-0 ml-5"
               style={{ borderRadius: "30px" }}
             />
           </li>

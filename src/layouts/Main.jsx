@@ -7,7 +7,6 @@ import Lottie from "lottie-react";
 const Main = () => {
   const { loading } = useContext(AuthContext);
   const navigation = useNavigation();
-  console.log(navigation);
   if (loading) {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">

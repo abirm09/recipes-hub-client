@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
   const githubProvider = new GithubAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [redirectPath, setRedirectPath] = useState("/");
   //email and pass
   const createUserWithEmailPass = (email, password) =>
     createUserWithEmailAndPassword(auth, email, password);
@@ -45,6 +46,8 @@ const AuthProvider = ({ children }) => {
     githubLogin,
     logInWithEmailPass,
     loading,
+    redirectPath,
+    setRedirectPath,
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

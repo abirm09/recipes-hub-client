@@ -1,15 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleLogo from "../../assets/social-icon/google.png";
 import githubLogo from "../../assets/social-icon/github.png";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 const Login = () => {
-  const { logInWithEmailPass, googleLogin, githubLogin } =
+  const { logInWithEmailPass, googleLogin, githubLogin, setRedirectPath } =
     useContext(AuthContext);
   const [logInErr, setLogInErr] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location?.state?.from?.pathname || "/");
+  useEffect(() => {
+    setRedirectPath(location?.state?.from?.pathname || "/");
+  }, []);
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;

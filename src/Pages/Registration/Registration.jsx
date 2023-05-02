@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import googleLogo from "../../assets/social-icon/google.png";
 import githubLogo from "../../assets/social-icon/github.png";
 import { useContext, useState } from "react";
@@ -6,8 +6,9 @@ import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Registration = () => {
   const [registrationErr, setRegistrationErr] = useState("");
-  const { createUserWithEmailPass, googleLogin, githubLogin } =
+  const { createUserWithEmailPass, googleLogin, githubLogin, redirectPath } =
     useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegistration = event => {
     event.preventDefault();
     const form = event.target;
@@ -23,6 +24,7 @@ const Registration = () => {
       .then(result => {
         const user = result.user;
         sendUserData(user, name, photo);
+        navigate(redirectPath);
         console.log(user);
       })
       .catch(err => {
@@ -34,7 +36,7 @@ const Registration = () => {
   };
   const sendUserData = (user, name, photo) => {
     updateProfile(user, {
-      displayName: name,
+      displayName: name || null,
       photoURL: photo || null,
     });
   };
@@ -43,6 +45,7 @@ const Registration = () => {
     googleLogin()
       .then(result => {
         const user = result.user;
+        navigate(redirectPath);
         console.log(user);
       })
       .catch(err => {
@@ -54,6 +57,7 @@ const Registration = () => {
     githubLogin()
       .then(result => {
         const user = result.user;
+        navigate(redirectPath);
         console.log(user);
       })
       .catch(err => {
