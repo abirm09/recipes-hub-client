@@ -8,7 +8,7 @@ const Login = () => {
         <div className="max-w-[570px] w-full mx-auto md:shadow-lg rounded-lg p-5 md:p-10">
           <form className="space-y-5">
             <div>
-              <label htmlFor="name" className="font-poppins font-semibold">
+              <label htmlFor="email" className="font-poppins font-semibold">
                 Email
               </label>
               <input
@@ -20,7 +20,7 @@ const Login = () => {
               />
             </div>
             <div>
-              <label htmlFor="name" className="font-poppins font-semibold">
+              <label htmlFor="password" className="font-poppins font-semibold">
                 Password
               </label>
               <input

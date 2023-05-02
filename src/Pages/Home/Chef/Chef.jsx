@@ -10,14 +10,14 @@ const Chef = () => {
     <section className="bg-slate-50">
       <div className="cs-container">
         <div className="hero min-h-[70vh]">
-          <div className="hero-content justify-between w-full flex-col lg:flex-row-reverse gap-10">
-            <div>
+          <div className="hero-content grid grid-cols-1 md:grid-cols-3 justify-between w-full gap-10">
+            <div className="col-span-1">
               <img
                 src={photo}
                 className="max-w-sm rounded-lg shadow-2xl w-full"
               />
             </div>
-            <div>
+            <div className="col-span-1 md:col-span-2">
               <h1 className="text-3xl md:text-5xl font-bold">{chefName}</h1>
               <p className="py-6">{description}</p>
               <div className="space-y-1 md:space-y-3 mt-2 md:mt-10">

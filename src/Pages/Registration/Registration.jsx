@@ -1,12 +1,39 @@
 import { Link } from "react-router-dom";
 import googleLogo from "../../assets/social-icon/google.png";
 import githubLogo from "../../assets/social-icon/github.png";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 const Registration = () => {
+  const { createUserWithEmailPass } = useContext(AuthContext);
+  const handleRegistration = event => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    createUserWithEmailPass(email, password)
+      .then(result => {
+        const user = result.user;
+        sendUserData(user, name, photo);
+        console.log(user);
+      })
+      .then(err => {
+        console.log(err);
+      });
+  };
+  const sendUserData = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo || null,
+    });
+  };
   return (
     <section>
       <div className="cs-container">
         <div className="max-w-[570px] w-full mx-auto md:shadow-lg rounded-lg p-5 md:p-10">
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleRegistration}>
             <div>
               <label htmlFor="name" className="font-poppins font-semibold">
                 Name
@@ -16,23 +43,22 @@ const Registration = () => {
                 placeholder="Enter your name"
                 className="input input-bordered  w-full mt-2"
                 name="name"
-                required
               />
             </div>
             <div>
-              <label htmlFor="name" className="font-poppins font-semibold">
+              <label htmlFor="email" className="font-poppins font-semibold">
                 Email
               </label>
               <input
                 type="email"
                 placeholder="Enter your Email"
                 className="input input-bordered  w-full mt-2"
-                name="name"
+                name="email"
                 required
               />
             </div>
             <div>
-              <label htmlFor="name" className="font-poppins font-semibold">
+              <label htmlFor="photo" className="font-poppins font-semibold">
                 Photo url
               </label>
               <input
@@ -43,7 +69,7 @@ const Registration = () => {
               />
             </div>
             <div>
-              <label htmlFor="name" className="font-poppins font-semibold">
+              <label htmlFor="password" className="font-poppins font-semibold">
                 Password
               </label>
               <input
