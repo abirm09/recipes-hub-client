@@ -1,8 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import Chefs from "./Chefs";
+import Hero from "./Hero";
+import "./home.css";
 const Home = () => {
+  const data = useLoaderData();
   return (
-    <div>
-      <h3>From home.</h3>
-    </div>
+    <>
+      <Hero />
+      <Chefs data={data} />
+    </>
   );
 };
 

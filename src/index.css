@@ -5,3 +5,20 @@
 .cs-container {
   @apply max-w-7xl mx-auto px-2;
 }
+
+/* cs = custom */
+.cs-btn {
+  @apply bg-slate-300 bg-opacity-25 px-5 py-3 border-2 border-slate-300 text-white hover:bg-slate-100 hover:bg-opacity-50 transition-all font-poppins text-base;
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-open-sans font-bold relative;
+}
+.section-title::before {
+  content: "";
+  @apply absolute h-1 w-28 bg-red-500 -bottom-2 left-0;
+}
+
+.section-subtitle {
+  @apply font-poppins font-semibold mt-5 text-slate-600 text-sm md:text-base;
+}

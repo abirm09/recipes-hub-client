@@ -13,7 +13,7 @@ const NavigationLinks = () => {
       <li>
         <ActiveLink to="/blog">Blog</ActiveLink>
       </li>
-      {!user ? (
+      {user ? (
         <>
           <li className="tooltip tooltip-bottom p-0" data-tip="hello">
             <img
@@ -24,8 +24,8 @@ const NavigationLinks = () => {
           </li>
         </>
       ) : (
-        <li>
-          <Link to="/login" className="bg-gray-700 text-white ml-5">
+        <li className="mx-auto mt-5 lg:mt-0">
+          <Link to="/login" className="bg-gray-700 text-white ml-0 lg:ml-5">
             Log in
           </Link>
         </li>
