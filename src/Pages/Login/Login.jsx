@@ -1,12 +1,32 @@
 import { Link } from "react-router-dom";
 import googleLogo from "../../assets/social-icon/google.png";
 import githubLogo from "../../assets/social-icon/github.png";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 const Login = () => {
+  const { logInWithEmailPass } = useContext(AuthContext);
+  const [logInErr, setLogInErr] = useState("");
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setLogInErr("");
+    logInWithEmailPass(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(err => {
+        console.log(err);
+        setLogInErr(`Error : ${err.message.split("/")[1].replace(")", "")}`);
+      });
+  };
   return (
     <section>
       <div className="cs-container">
         <div className="max-w-[570px] w-full mx-auto md:shadow-lg rounded-lg p-5 md:p-10">
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleLogin}>
             <div>
               <label htmlFor="email" className="font-poppins font-semibold">
                 Email
@@ -15,7 +35,7 @@ const Login = () => {
                 type="email"
                 placeholder="Enter your Email"
                 className="input input-bordered  w-full mt-2"
-                name="name"
+                name="email"
                 required
               />
             </div>
@@ -31,6 +51,7 @@ const Login = () => {
                 required
               />
             </div>
+            <p className="font-bold font-poppins text-red-700">{logInErr}</p>
             <div>
               <input
                 type="submit"

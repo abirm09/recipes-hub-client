@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import googleLogo from "../../assets/social-icon/google.png";
 import githubLogo from "../../assets/social-icon/github.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 const Registration = () => {
+  const [registrationErr, setRegistrationErr] = useState("");
   const { createUserWithEmailPass, googleLogin, githubLogin } =
     useContext(AuthContext);
   const handleRegistration = event => {
@@ -14,14 +15,21 @@ const Registration = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
+    if (password.length < 6) {
+      setRegistrationErr("Password should greater than 6 characters.");
+      return;
+    }
     createUserWithEmailPass(email, password)
       .then(result => {
         const user = result.user;
         sendUserData(user, name, photo);
         console.log(user);
       })
-      .then(err => {
+      .catch(err => {
         console.log(err);
+        setRegistrationErr(
+          `Error : ${err.message.split("/")[1].replace(")", "")}`
+        );
       });
   };
   const sendUserData = (user, name, photo) => {
@@ -104,6 +112,9 @@ const Registration = () => {
                 required
               />
             </div>
+            <p className="font-bold font-poppins text-red-700">
+              {registrationErr}
+            </p>
             <div>
               <input
                 type="submit"
