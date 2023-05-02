@@ -9,7 +9,6 @@ const Login = () => {
   const [logInErr, setLogInErr] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location?.state?.from?.pathname || "/");
   useEffect(() => {
     setRedirectPath(location?.state?.from?.pathname || "/");
   }, []);
