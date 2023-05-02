@@ -4,15 +4,8 @@ import Recipes from "./Recipes";
 
 const Chef = () => {
   const data = useLoaderData();
-  const {
-    id,
-    chefName,
-    photo,
-    yearsOfExperience,
-    likes,
-    recipes,
-    description,
-  } = data;
+  const { chefName, photo, yearsOfExperience, likes, recipes, description } =
+    data;
   return (
     <section className="bg-slate-50">
       <div className="cs-container">
