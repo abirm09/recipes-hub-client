@@ -4,7 +4,8 @@ import githubLogo from "../../assets/social-icon/github.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 const Login = () => {
-  const { logInWithEmailPass } = useContext(AuthContext);
+  const { logInWithEmailPass, googleLogin, githubLogin } =
+    useContext(AuthContext);
   const [logInErr, setLogInErr] = useState("");
   const handleLogin = event => {
     event.preventDefault();
@@ -20,6 +21,28 @@ const Login = () => {
       .catch(err => {
         console.log(err);
         setLogInErr(`Error : ${err.message.split("/")[1].replace(")", "")}`);
+      });
+  };
+  //login with google
+  const handleGoogleLogIn = () => {
+    googleLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  //login with github
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
   return (
@@ -71,10 +94,10 @@ const Login = () => {
           <div>
             <h4 className="text-center font-bold py-4">Or continue with</h4>
             <ul className="flex justify-center gap-5">
-              <li className="w-10">
+              <li className="w-10 cursor-pointer" onClick={handleGoogleLogIn}>
                 <img src={googleLogo} alt="Google sign in" />
               </li>
-              <li className="w-10">
+              <li className="w-10 cursor-pointer" onClick={handleGithubLogin}>
                 <img src={githubLogo} alt="Google sign in" />
               </li>
             </ul>
