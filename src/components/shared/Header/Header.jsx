@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import { AuthContext } from "../../../providers/AuthProvider/AuthProvider";
 import NavigationLinks from "./NavigationLinks";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
   return (
     <header>
       <div className="cs-container">
@@ -38,7 +35,7 @@ const Header = () => {
               to="/"
               className="btn btn-ghost normal-case text-xl ml-auto lg:ml-0 font-rubik"
             >
-              Recipes Hub
+              Recipes HUB
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
