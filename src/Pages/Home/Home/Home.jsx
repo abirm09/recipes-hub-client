@@ -3,15 +3,15 @@ import Chefs from "./Chefs";
 import Hero from "./Hero";
 import "./home.css";
 import PopularRecipes from "./PopularRecipes";
-import RandomRecipes from "./RandomRecipes";
+import HUbInNumber from "./HUbInNumber";
 const Home = () => {
   const data = useLoaderData();
   return (
     <>
       <Hero />
+      <HUbInNumber data={data} />
       <Chefs data={data} />
       <PopularRecipes data={data} />
-      <RandomRecipes data={data} />
     </>
   );
 };

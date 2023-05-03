@@ -16,8 +16,8 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () =>
-          fetch("https://recipes-hub-server-abirm09.vercel.app/chefs/all"),
+        loader: () => fetch("http://localhost:5000/chefs/all"),
+        // fetch("https://recipes-hub-server-abirm09.vercel.app/chefs/all"),
       },
       {
         path: "/blog",
@@ -26,9 +26,7 @@ export const routes = createBrowserRouter([
       {
         path: "/chef/:id",
         loader: ({ params }) =>
-          fetch(
-            `https://recipes-hub-server-abirm09.vercel.app/chef/${params.id}`
-          ),
+          fetch(`http://localhost:5000/chef/${params.id}`),
         element: (
           <PrivateRoute>
             <Chef />

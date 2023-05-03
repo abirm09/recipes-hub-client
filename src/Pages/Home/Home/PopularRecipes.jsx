@@ -14,7 +14,7 @@ const PopularRecipes = ({ data }) => {
           Explore our popular recipes section for a taste of the most loved
           dishes.
         </p>
-        <div className="flex justify-center gap-10 mt-10">
+        <div className="flex justify-center gap-10 mt-10 flex-wrap">
           {popularThree.map(pp => (
             <div
               key={pp.id}
