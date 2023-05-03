@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 const HUbInNumber = () => {
   const [numberData, setNUmberData] = useState([]);
   useEffect(() => {
-    //   fetch("https://recipes-hub-server-abirm09.vercel.app/infoinnumber")
-    fetch("http://localhost:5000/infoinnumber")
+    fetch("https://recipes-hub-server-abirm09.vercel.app/infoinnumber")
       .then(res => res.json())
       .then(data => setNUmberData(data));
   }, []);
