@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider/AuthProvider";
 import loadingGif from "../assets/loading-anim/loading.json";
 import Lottie from "lottie-react";
+import Footer from "../components/shared/Footer/Footer";
 const Main = () => {
   const { loading } = useContext(AuthContext);
   const navigation = useNavigation();
@@ -33,6 +34,7 @@ const Main = () => {
         </>
       )}
       <Outlet />
+      <Footer />
     </>
   );
 };
