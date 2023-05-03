@@ -3,6 +3,7 @@ import Chefs from "./Chefs";
 import Hero from "./Hero";
 import "./home.css";
 import PopularRecipes from "./PopularRecipes";
+import RandomRecipes from "./RandomRecipes";
 const Home = () => {
   const data = useLoaderData();
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Chefs data={data} />
       <PopularRecipes data={data} />
+      <RandomRecipes data={data} />
     </>
   );
 };
