@@ -66,7 +66,7 @@ const Registration = () => {
   };
 
   return (
-    <section>
+    <section className="mb-10">
       <div className="cs-container">
         <div className="max-w-[570px] w-full mx-auto md:shadow-lg rounded-lg p-5 md:p-10">
           <form className="space-y-5" onSubmit={handleRegistration}>

@@ -18,9 +18,9 @@ const HUbInNumber = () => {
           {numberData.map(dd => (
             <div
               key={dd.id}
-              className="w-[170px] bg-white px-5 py-8 text-center h-44 hover:scale-110 transition-all hover:shadow-lg"
+              className="w-[170px] bg-white p-5 text-center h-44 hover:scale-110 transition-all hover:shadow-lg space-y-2"
             >
-              <img src={dd.img} alt={dd.name} />
+              <img src={dd.img} alt={dd.name} className="w-16 mx-auto" />
               <h4 className="text-3xl font-rubik font-bold text-red-400">
                 {dd.count}
               </h4>
