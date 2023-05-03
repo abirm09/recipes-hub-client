@@ -1,0 +1,18 @@
+[
+  {
+    "question": "When should USE context API.",
+    "answer": "React Context API is a way to effectively produce global variables that can be pass around.When we need to pass a variable from grandparent to child to parent then we use context API.We can also pass states.Its an alternative of 'props drilling'."
+  },
+  {
+    "question": "What is custom hook.",
+    "answer": "In React, a custom hook is a JavaScript function that starts with the word 'use' and enables us to extract reusable logic from a component. Custom hooks allow us to share stateful logic between components. And gives us super power for not to duplicate a logic in each component."
+  },
+  {
+    "question": "About useRef() hook.",
+    "answer": "In React, useRef() is a built-in hook.That returns a mutable ref object, which can be used to hold a reference to a DOM node or a value that persists across component renders. The useRef() hook can be useful when you need to keep track of a value or object in a way that does not trigger a re-render when it changes."
+  },
+  {
+    "question": "About useMemo() hook.",
+    "answer": "In React, useRef() is a built-in hook.useMemo() hook is use to memorize expensive computations.useMemo() hook takes 2 argument a function and an array of dependencies.The function that perform the computations."
+  }
+]
