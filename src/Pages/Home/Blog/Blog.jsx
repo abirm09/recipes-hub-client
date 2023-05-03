@@ -17,21 +17,18 @@ const Blog = () => {
           <h2 className="section-title">Question answers</h2>
 
           <div className="mt-10 p-5">
-            <ol className="list-decimal ml-5">
-              {answer.map(ans => (
-                <>
-                  <li
-                    className="font-bold font-poppins mt-5 text-xl"
-                    key={ans.id}
-                  >
-                    {ans.question}
-                  </li>
-                  <p className="font-poppins text-slate-700 mt-2">
+            <div className="list-decimal ml-5">
+              {answer.map((ans, index) => (
+                <div key={index}>
+                  <h2 className="font-semibold font-poppins mt-5 text-xl">
+                    <span>{index + 1}. </span> {ans.question}
+                  </h2>
+                  <p className="font-poppins text-slate-700 mt-2 ml-5">
                     {ans.answer}
                   </p>
-                </>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </div>
       </section>
