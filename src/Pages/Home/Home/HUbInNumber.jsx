@@ -7,7 +7,6 @@ const HUbInNumber = () => {
       .then(res => res.json())
       .then(data => setNUmberData(data));
   }, []);
-  console.log(numberData);
   return (
     <section className="pt-28 bg-slate-100 pb-10">
       <div className="cs-container">

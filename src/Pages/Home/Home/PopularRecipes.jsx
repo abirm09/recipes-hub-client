@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 const PopularRecipes = ({ data }) => {
   const popularThree = [data[4], data[0], data[3]];
   const navigate = useNavigate();
-  console.log(popularThree);
-
   return (
     <section className="mt-28 bg-slate-100 py-10">
       <div className="cs-container">

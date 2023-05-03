@@ -16,9 +16,11 @@ const Recipes = ({ recipe }) => {
         <img src={photo} alt={recipeName} className="h-64 w-full" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{recipeName}</h2>
+        <h2 className="card-title text-3xl font-poppins text-red-500">
+          {recipeName}
+        </h2>
         <div>
-          <h2 className="text-xl font-bold font-poppins">Ingredients</h2>
+          <h2 className="text-lg font-bold font-poppins">Ingredients</h2>
           <ul className="mt-1 font-poppins">
             {ingredients.map((ingredient, index) => (
               <li key={index}>
@@ -26,7 +28,7 @@ const Recipes = ({ recipe }) => {
               </li>
             ))}
           </ul>
-          <h4 className="text-xl font-bold font-poppins mt-5">
+          <h4 className="text-lg font-bold font-poppins mt-5">
             Cooking methods.
           </h4>
           <p>{cookingMethod.description}</p>

@@ -1,17 +1,20 @@
 /* eslint-disable react/prop-types */
 import { FaHeart } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import { useNavigate } from "react-router-dom";
 const ChefSingle = ({ chef }) => {
   const { id, chefName, photo, yearsOfExperience, likes, recipes } = chef;
   const navigate = useNavigate();
   return (
-    <div className="card card-side bg-base-100 shadow-xl max-w-[600px] w-full">
+    <div className="card card-side flex-col sm:flex-row bg-base-100 shadow-xl max-w-[600px] w-full">
       <figure>
-        <img
-          src={photo}
-          alt="Movie"
-          className="w-28 h-40 sm:w-[200px] sm:h-72 px-2 sm:px-0"
-        />
+        <LazyLoad height={288} width={200}>
+          <img
+            src={photo}
+            alt="Movie"
+            className="p-3 sm:p-0 rounded-lg sm:rounded-none"
+          />
+        </LazyLoad>
       </figure>
       <div className="card-body p-3">
         <h2 className="card-title font-poppins ">{chefName}</h2>
