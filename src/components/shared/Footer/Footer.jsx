@@ -1,11 +1,11 @@
 const Footer = () => {
   return (
     <footer className="mt-28">
-      <div className="bg-slate-900 py-5">
+      <div className="bg-slate-950 py-5">
         <div className="cs-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h2 className="section-title text-white">About</h2>
+              <h2 className="section-title text-slate-300">About</h2>
               <p className="mt-5 text-slate-400">
                 Welcome to{" "}
                 <span className="text-red-500 font-bold ">Recipes HUB</span> ,
@@ -23,11 +23,11 @@ const Footer = () => {
               </p>
             </div>
             <div>
-              <h2 className="section-title text-white">News letter</h2>
+              <h2 className="section-title text-slate-300">News letter</h2>
               <div className="mt-10">
                 <p className="text-slate-400">
-                  Sign up to receive email updates on new product announcements,
-                  gift ideas, sales and more.
+                  Subscribe our newsletter to receive email updates on new
+                  product announcements, gift ideas, sales and more.
                 </p>
                 <div className="max-w-[500px] font-poppins space-y-5">
                   <input
@@ -48,9 +48,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-slate-950 text-white text-center py-3">
-        <h2>
-          &#169; <span className="text-red-500">Recipes HUB</span> | All rights
+      <div className="bg-slate-900 text-white text-center py-3">
+        <h2 className="text-slate-400">
+          &#169; <span className="text-red-500 ">Recipes HUB</span> | All rights
           reserved.
         </h2>
       </div>
