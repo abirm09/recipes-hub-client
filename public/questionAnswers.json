@@ -5,14 +5,14 @@
   },
   {
     "question": "How to validate React props using PropTypes.",
-    "answer": "We can use a package called prop-types to validate props types."
+    "answer": "PropsTypes is a package for validating props.If we want to validate props types, We have to import the package in which component we want to validate. And then "
   },
   {
     "question": "Tell us the difference between nodejs and express js.",
-    "answer": ""
+    "answer": "Node.js and Express.js both are popular technologies used in web development. They have different uses purposes. In short, Node.js is a javaScript runtime environment that allows us to execute javaScript outside of a web browser. On the other hand Express.js is a Node.js framework. That use to develop a server and APIs."
   },
   {
     "question": "What is a custom hook, and why will you create a custom hook?",
-    "answer": ""
+    "answer": "In React, a custom hook is a JavaScript function that starts with the word 'use' and enables us to extract reusable logic from a component. Custom hooks allow us to share stateful logic between components. And gives us super power for not to duplicate a logic in each component."
   }
 ]
