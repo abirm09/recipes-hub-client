@@ -9,7 +9,6 @@ const Blog = () => {
       .then(res => res.json())
       .then(data => setAnswer(data));
   }, []);
-  console.log(answer);
   return (
     <>
       <section className="pt-28 pb-10 bg-gray-200">

@@ -1,18 +1,18 @@
 [
   {
     "question": "Tell us the differences between uncontrolled and controlled components.",
-    "answer": "In react , If a component's have any sate and behavior that controlled by the parent component its call a controlled components. And the other hand , The component that manages its own state internally is called an uncontrolled component."
+    "answer": "In react , If a component's have any sate and behavior that controlled by the parent component its call a controlled components. On the other hand, The component that manages its own state internally is called an uncontrolled component."
   },
   {
     "question": "How to validate React props using PropTypes.",
-    "answer": "PropsTypes is a package for validating props.If we want to validate props types, We have to import the package in which component we want to validate. And then "
+    "answer": "PropsTypes is a package for validating props. Its used to validate props types in react. In a component we call the component and call the validate object with dot notation. In the validating object, The object key will be the props name and the value will PropsTypes and a valid javaScript data type (string, bool,number) both will use with dot notation. types. For example (name:PropsTypes.string, age:PropsTypes.number). We can also set a must required props. And also set function."
   },
   {
     "question": "Tell us the difference between nodejs and express js.",
-    "answer": "Node.js and Express.js both are popular technologies used in web development. They have different uses purposes. In short, Node.js is a javaScript runtime environment that allows us to execute javaScript outside of a web browser. On the other hand Express.js is a Node.js framework. That use to develop a server and APIs."
+    "answer": "Node.js and Express.js both are popular technologies used in web development. They have different uses purposes. In short, Node.js is a javaScript runtime environment that allows us to execute javaScript outside of a web browser. On the other hand Express.js is a Node.js framework. That use to develop powerful server and APIs."
   },
   {
     "question": "What is a custom hook, and why will you create a custom hook?",
-    "answer": "In React, a custom hook is a JavaScript function that starts with the word 'use' and enables us to extract reusable logic from a component. Custom hooks allow us to share stateful logic between components. And gives us super power for not to duplicate a logic in each component."
+    "answer": "In React, a custom hook is a JavaScript function that starts with the word 'use' and enables us to extract reusable logic from a component. Custom hooks allow us to share stateful logic between components. And gives us super power for not to duplicate a logic in each component. That why we create custom hook."
   }
 ]
